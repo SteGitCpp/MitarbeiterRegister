@@ -1,1 +1,6 @@
-Hallo du sack
+// Hallo du sack
+
+class Datum
+{
+    int Tag, Monat,Jahr;
+}

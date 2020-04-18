@@ -1,8 +1,6 @@
-#include <ctime>
+#include "DATUM.h"
 
-class Datum
+std::string DATUM::str()
 {
-    int Tag, Monat,Jahr;
+    return std::to_string(Tag) + "." + std::to_string(Monat) + "." + std::to_string(Jahr);
 }
-
-time_t HEIT = time(NULL);

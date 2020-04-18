@@ -1,3 +1,6 @@
+# Andre
+.DS_Store
+
 # Prerequisites
 *.d
 
@@ -5,6 +8,7 @@
 *.slo
 *.lo
 *.o
+!DateReadIn.o
 *.obj
 
 # Precompiled Headers

@@ -30,3 +30,27 @@ std::string MITARBEITER::str()
     return NName + ", " + VName + "\n" + Gebdat.str() + "\n" + std::to_string(Urlaubstage); 
 }
 
+int MITARBEITER::restUrlaub()
+{
+    time_t HDATUM;
+    struct tm tmHDatum;
+    tmHDatum = *gmtime(&HDATUM);
+
+    int restUrlaub;
+
+    if (tmHDatum.tm_year-Gebdat.Jahr > 50)
+    // if (tmHDatum-> tm_year-Gebdat.Jahr>50)
+    {
+        restUrlaub=32-Urlaubstage;
+    }else
+    {
+        restUrlaub=30-Urlaubstage;
+    }
+    
+    return restUrlaub;
+}
+
+void MITARBEITER::Urlaub_add(int ut)
+{
+    Urlaubstage+=ut;
+}

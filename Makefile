@@ -10,6 +10,7 @@ endif
 
 CFLAGS = -g -Wall
 OUT = Binaries
+
 all:
 	@echo ---------- MitarbeiterRegister ----------
 	@echo TESTING:

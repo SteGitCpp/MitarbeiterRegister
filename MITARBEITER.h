@@ -19,4 +19,5 @@ class MITARBEITER
         void reset();
         std::string str();
         int restUrlaub();
+        void Urlaub_add(int ut);
 };

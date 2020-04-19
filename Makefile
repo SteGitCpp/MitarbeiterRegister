@@ -11,14 +11,12 @@ endif
 CFLAGS = -g -Wall
 OUT = Binaries
 all:
-	@echo "---------- MitarbeiterRegister ----------"
-	@echo
-	@echo "TESTING:"
-	@echo "    test_datum  "
-	@echo "    test_mitarbeiter"
-	@echo
-	@echo "MAIN:"
-	@echo "    main"
+	@echo ---------- MitarbeiterRegister ----------
+	@echo TESTING:
+	@echo     test_datum  
+	@echo     test_mitarbeiter
+	@echo MAIN:
+	@echo     main
 
 test_datum: $(OUT)/Datum.o $(OUT)/datum_test.o
 	$(CC) $(CFLAGS) $^ -o ./$(OUT)/$@.$(ENDING)

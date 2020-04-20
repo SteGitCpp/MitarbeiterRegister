@@ -1,15 +1,25 @@
 #include "MITARBEITERREGISTER.h"
 
-// void MB_hinzufügen(MITARBEITER MB);
+void MITARBEITERREGISTER::MB_hinzufuegen(MITARBEITER MB)
+{
+    for (int i = 0; i < REG_LEN; i++)
+    {
+        if (Register[i].Overwrite==true)
+        {
+            Register[i] = MB;
+            return;
+        }            
+    }
+}
+
 int MITARBEITERREGISTER::MB_suchen(std::string vn, std::string nn)
 {
-     for (int RegPos = 0; RegPos < 500; RegPos++)
+     for (int RegPos = 0; RegPos < REG_LEN ; RegPos++)
      {
          if (Register[RegPos].VName==vn && Register[RegPos].NName==nn)
-         {
              return RegPos;
-         }
-     }   
+     }
+     return -1;   
 }
 
 void MITARBEITERREGISTER::MB_loeschen(int RegPos)
@@ -26,10 +36,15 @@ std::string MITARBEITERREGISTER::MBs_stringliste()
 {
     std::string strliste;
 
-    for (int i = 0; i < 500 ; i++)
+    for (int i = 0; i < REG_LEN ; i++)
     {
-        strliste += Register[i].str();
+        if (Register[i].Overwrite==false){
+            strliste +="Mitarbeiternummer: " + std::to_string(i) + "\n";
+            strliste += Register[i].str();
+        }
+       
     }
+
     return strliste;
 }
 
@@ -38,7 +53,7 @@ int MITARBEITERREGISTER::MBs_anzahl()
     int i=0;
     int x=0; 
 
-    while (i < 500)
+    while (i < REG_LEN)
     {
         if (Register[i].Overwrite == false)
         {

@@ -27,7 +27,11 @@ void MITARBEITER::reset()
 
 std::string MITARBEITER::str()
 {   
-    return NName + ", " + VName + "\n" + Gebdat.str() + "\n" + std::to_string(Urlaubstage); 
+    std::string s;
+    s = "Name: " + NName + ", " + VName + "\n";
+    s += "Geb: " +  Gebdat.str() + "\n";
+    s += "genommene Urlaubstage: " + std::to_string(Urlaubstage) + "\n\n"; 
+    return s;
 }
 
 int MITARBEITER::restUrlaub()
@@ -39,13 +43,9 @@ int MITARBEITER::restUrlaub()
     int restUrlaub;
 
     if (tmHDatum.tm_year-Gebdat.Jahr > 50)
-    // if (tmHDatum-> tm_year-Gebdat.Jahr>50)
-    {
         restUrlaub=32-Urlaubstage;
-    }else
-    {
+    else
         restUrlaub=30-Urlaubstage;
-    }
     
     return restUrlaub;
 }

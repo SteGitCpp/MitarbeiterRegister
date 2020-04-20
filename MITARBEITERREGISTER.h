@@ -1,11 +1,13 @@
 #include "MITARBEITER.h"
 
+#define REG_LEN 500
+
 class MITARBEITERREGISTER
 {
-    MITARBEITER Register[500];
+    MITARBEITER Register[REG_LEN];
 
     public:
-        void MB_hinzufügen(MITARBEITER MB);
+        void MB_hinzufuegen(MITARBEITER MB);
         int MB_suchen(std::string vn, std::string nn);
         void MB_loeschen(int RegPos);
         void MB_Urlaubanlegen(int RegPos, int ut);

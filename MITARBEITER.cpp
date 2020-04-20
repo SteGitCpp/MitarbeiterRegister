@@ -50,7 +50,8 @@ int MITARBEITER::restUrlaub()
     return restUrlaub;
 }
 
-void MITARBEITER::Urlaub_add(int ut)
+/* void MITARBEITER::Urlaub_add(int ut)
 {
     Urlaubstage+=ut;
 }
+*/

@@ -21,6 +21,7 @@ all:
 	@echo     test_gui
 	@echo MAIN:
 	@echo     main
+	@echo     main_E
 
 # comands
 test_datum: $(OUT)/Datum.o $(OUT)/datum_test.o
@@ -35,6 +36,15 @@ test_register: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o 
 test_gui: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT)/GUI.o $(OUT)/gui_test.o
 	$(CC) $(CFLAGS) $^ -o ./$(OUT)/$@.$(ENDING)
 
+main: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT)/GUI.o $(OUT)/main.o
+	$(CC) $(CFLAGS) $^ -o ./$(OUT)/$@.$(ENDING)
+
+main_E: Datum.cpp Mitarbeiter.cpp MitarbeiterRegister.cpp GUI.cpp main.cpp
+	$(CC) $(CFLAGS) $^ -E > main.preprocessor
+
+main_S: main.cpp
+	$(CC) $(CFLAGS) $^ -S
+
 # object files Project
 ./$(OUT)/Datum.o: Datum.cpp
 	$(CC) $(CFLAGS) -c $^ -o $@
@@ -46,6 +56,9 @@ test_gui: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 ./$(OUT)/GUI.o: GUI.cpp
+	$(CC) $(CFLAGS) -c $^ -o $@
+
+./$(OUT)/main.o: main.cpp
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 # object files Testing

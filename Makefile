@@ -32,7 +32,7 @@ test_mitarbeiter: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/mitarbeiter_test.o
 test_register: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT)/register_test.o
 	$(CC) $(CFLAGS) $^ -o ./$(OUT)/$@.$(ENDING)
 
-test_register: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT)/GUI.o $(OUT)/gui_test.o
+test_gui: $(OUT)/Datum.o $(OUT)/Mitarbeiter.o $(OUT)/MitarbeiterRegister.o $(OUT)/GUI.o $(OUT)/gui_test.o
 	$(CC) $(CFLAGS) $^ -o ./$(OUT)/$@.$(ENDING)
 
 # object files Project

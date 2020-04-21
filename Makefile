@@ -8,7 +8,7 @@ else
     ENDING = out
 endif
 
-CFLAGS = -g -Wall
+CFLAGS = -std=c++14 -g -Wall
 OUT = Binaries
 
 # menue

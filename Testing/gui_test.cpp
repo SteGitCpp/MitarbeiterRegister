@@ -1,5 +1,5 @@
 #include <iostream>
-#include "..\GUI.h"
+#include "../GUI.h"
 
 int main()
 {

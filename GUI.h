@@ -1,5 +1,8 @@
 #include "MITARBEITERREGISTER.h"
 
+#ifndef GUI_H
+#define GUI_H
+
 class GUI
 {
     public:
@@ -15,3 +18,5 @@ class GUI
         void UrlaubAnlegen();
         void MB_ListeAnzeigen();
 };
+
+#endif

@@ -1,0 +1,27 @@
+OUTPUT
+
+        GUI:
+            Menue verschönern
+
+            Fehlen Leerzeichen? etc.
+
+            bei suche: keine loop
+
+
+        MITARBEITERREGISTER:
+
+            Alle anzeigen "Mitarbeiterliste:" unnnoetig
+            mb anzahl nach unten
+            mb nr weg
+
+                            Name: Otter, Dori
+                    Geburtstag: 27.3.1969
+            Genommene Urlaubstage: 0
+                        MB-Nr.:
+
+
+            suchen:
+                viel spielraum fuer verbesserung
+
+
+

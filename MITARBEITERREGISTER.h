@@ -2,6 +2,9 @@
 
 #define REG_LEN 20
 
+#ifndef MITARBEITERREGISTER_H
+#define MITARBEITERREGISTER_H
+
 struct MITARBEITERREGISTER
 {
     MITARBEITER Register[REG_LEN];
@@ -13,3 +16,5 @@ struct MITARBEITERREGISTER
     std::string MBs_stringliste();
     int MBs_anzahl();
 };
+
+#endif

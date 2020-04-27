@@ -1,7 +1,7 @@
 #include <string>
 #include <ctime>
 
-#include "DATUM.h"
+#include "Datum.h"
 
 #ifndef MITARBEITER_H
 #define MITARBEITER_H
@@ -20,7 +20,6 @@ struct MITARBEITER
         void reset();
         std::string str();
         int restUrlaub();
-        // void Urlaub_add(int ut);
 };
 
 #endif

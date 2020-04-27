@@ -1,12 +1,15 @@
-#include "MITARBEITERREGISTER.h"
-
+#include "MitarbeiterRegister.h"
+#include <iostream>
 void MITARBEITERREGISTER::MB_hinzufuegen(MITARBEITER MB)
 {
+    // std::cout << "DEBUG: MB_hinzufuegen() called" << std::endl;
     for (int i = 0; i < REG_LEN; i++)
     {
+        // std::cout << "DEBUG: MB_hinzufuegen() into for loop" << std::endl;
         if (Register[i].Overwrite)
         {
             Register[i] = MB;
+            // std::cout << "DEBUG: MB_hinzufuegen() MB hinzugefuegt" << std::endl;
             return;
         }            
     }

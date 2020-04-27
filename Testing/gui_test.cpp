@@ -3,6 +3,7 @@
 
 int main()
 {
+    std::cout << "REG_LEN = " << REG_LEN << std::endl;
     // Test Mitarbeiter
     DATUM d1(27, 03, 1969);
     MITARBEITER m1("Otter", "Dori", d1, 0);

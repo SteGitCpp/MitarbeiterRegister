@@ -1,10 +1,11 @@
-#include "MITARBEITER.h"
+#include "Mitarbeiter.h"
 
 
 MITARBEITER::MITARBEITER()
 {
     reset();
 }
+
 
 MITARBEITER::MITARBEITER(std::string nn, std::string vn, DATUM gd, int ut):
 NName(nn), VName(vn), Gebdat(gd), Urlaubstage(ut) {}
@@ -13,9 +14,9 @@ void MITARBEITER::reset()
 {
     NName = "x";
     VName = "x";
-    Gebdat.Jahr = 0;
-    Gebdat.Monat = 0;
     Gebdat.Tag = 0;
+    Gebdat.Monat = 0;
+    Gebdat.Jahr = 0;
     Urlaubstage = 0;
     Overwrite = true;
 }

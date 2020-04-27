@@ -1,4 +1,4 @@
-#include "MITARBEITER.h"
+#include "Mitarbeiter.h"
 
 #define REG_LEN 20
 

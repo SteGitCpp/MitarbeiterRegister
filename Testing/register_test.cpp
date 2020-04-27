@@ -10,6 +10,11 @@ int main ()
     MITARBEITER Andre ("PIMMEl", "Vaginer", Gebdat, 0);
 
     Firma.MB_hinzufuegen(Dori);
+    for (int i = 0; i < 50; i++)
+    {
+        Firma.MB_hinzufuegen(Andre);
+    }
+    
     Firma.MB_hinzufuegen(Alfred);
     std::cout << "Mitarbeiteranzahl: " << Firma.MBs_anzahl() << std::endl << std::endl;
 

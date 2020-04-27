@@ -10,6 +10,13 @@ void GUI::main()
         Benutzermenue();
         std::cin >> Benut; 
 
+        if (std::cin.fail())
+        {
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            Benut = 9; // willkuerliche invalide Nummer
+        }
+
         switch(Benut)
         {
             case 1:
@@ -37,9 +44,11 @@ void GUI::main()
                  break;
 
             default:
-                std::cout << "Das eingegebene Kommando ist nicht vorhanden : Bitte geben sie ein neues an\n";
+                std::cout << "Das eingegebene Kommando ist nicht vorhanden: Bitte geben sie ein neues an.\n";
                 break;
         }
+        //std::cin.clear();
+        //std::cin.ignore(1000, '\n');
     }while(Benut != 0);
 }
 
@@ -73,8 +82,12 @@ void GUI::MB_anlegen()
     std::cin >> ut;
 
     DATUM Gebdat(tg, mg, jg);
-    MITARBEITER X(vn, nn, Gebdat, ut);
-    Firma.MB_hinzufuegen(X);
+    MITARBEITER temp_MB(nn, vn, Gebdat, ut);
+
+    // std::cout << "DEBUG: "<< Gebdat.str() << std::endl;
+    // std::cout << "DEBUG: "<< temp_MB.str() << std::endl;
+
+    Firma.MB_hinzufuegen(temp_MB);
 
     std::cout << "\nMitarbeiter hinzugefuegt\n\n";
 }
@@ -93,7 +106,7 @@ void GUI::MB_suche()
     if (x < 0) 
         std::cout << "\nDer Mitarbeiter: " << vn << " " << nn << " existiert nicht." << std::endl;
     else
-        std::cout << Firma.Register[x].str();
+        std::cout << std::endl << "Mitarbeiter gefunden:\n" << Firma.Register[x].str();
 }
 
 void GUI::MB_Loeschen()
@@ -129,23 +142,24 @@ void GUI::UrlaubAnlegen()
         std::cin >> vn;
         std::cout << "   Nachname: ";
         std::cin >> nn;
-        std::cout << "Urlaubstage: ";
-        std::cin >> ut;
 
         x = Firma.MB_suchen(vn, nn);
         if (x < 0) 
-            std::cout << std::endl << "Der Mitarbeiter: " << vn << ", " << nn << " existiert nicht.";
+            std::cout << std::endl << "Der Mitarbeiter: " << vn << " " << nn << " existiert nicht.\n";
         else
         {
-            Firma.MB_Urlaubanlegen(x, ut);
-
-            std::cout << std::endl <<  "(1) Weiteren Urlaub anlegen\n";
-            std::cout << "(0) Hauptmenue\n";
-            std::cin >> Benut;
+            std::cout << "Urlaubstage: ";
+            std::cin >> ut;
             std::cout << std::endl;
-        }
 
-    }while(Benut && (x >= 0));
+            Firma.MB_Urlaubanlegen(x, ut);
+        }
+        std::cout << std::endl <<  "(1) Weiteren Urlaub anlegen\n";
+        std::cout << "(0) Hauptmenue\n\n";
+        std::cin >> Benut;
+        std::cout << std::endl;
+
+    }while(Benut);
 }
 
 void GUI::MB_ListeAnzeigen()

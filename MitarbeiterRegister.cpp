@@ -1,5 +1,7 @@
 #include "MitarbeiterRegister.h"
 #include <iostream>
+
+
 void MITARBEITERREGISTER::MB_hinzufuegen(MITARBEITER MB)
 {
     // std::cout << "DEBUG: MB_hinzufuegen() called" << std::endl;

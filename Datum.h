@@ -11,4 +11,5 @@ struct DATUM
     DATUM(int t,int m, int j): Tag(t), Monat(m), Jahr(j){}
     std::string str();
 };
+
 #endif
